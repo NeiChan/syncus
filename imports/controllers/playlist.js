@@ -4,7 +4,6 @@ import  { Playlist }        from '../models/playlists'
 import  { YT }              from '../functions/youtube';
 
 Template.playlist.onCreated( () => {
-
 });
 
 Template.playlist.helpers({
@@ -25,11 +24,11 @@ Template.playlist.events({
 
         Meteor.call('playlist.delete', roomId, videoID, (error, result) => {
             if(error){
-                console.log(error);
+                // console.log(error);
             }
 
             if(result){
-                console.log(result);
+                // console.log(result);
             }
         });
     } 

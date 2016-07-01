@@ -8,6 +8,7 @@ export const Playlist = new Mongo.Collection('rooms_playlist');
  */
 
 if(Meteor.isServer){
+    
     Meteor.methods({
         'playlist.insert'(room_id, video_id, img, r_title){
             if (room_id && video_id) {

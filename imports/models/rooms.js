@@ -8,6 +8,7 @@ export const Rooms = new Mongo.Collection('rooms');
  */
 
 if(Meteor.isServer){
+    
     Meteor.methods({
         'rooms.insert'(username){
             // Check if username is filled in...
