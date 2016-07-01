@@ -1,0 +1,81 @@
+<template name="Room">
+    <div class="container">
+        <h1>Room</h1>
+        <hr/>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="col-md-12">
+                    <div id="player"></div>
+
+                    {{#if isAdmin }}
+                    <div id="player-time"></div>
+                    {{else}}
+                    <div id="player-time" class="hide"></div>
+                    {{/if}}
+
+                    <p> {{ currentVideoTime }} / {{ totalVideoTime }}</p>
+
+                    {{#if isAdmin}}
+                    <button class="btn btn-default playBtn">Play</button>
+                    <button class="btn btn-default pauseBtn">Pause</button>
+                    <button class="btn btn-default skipBtn">Skip</button>
+                    {{/if}}
+                </div>
+
+                <div class="col-md-12">
+                    <br/><br/>
+                    <h3>Search for videos</h3>
+                    <hr/>
+                    <input type="text" class="form-control search-input">
+                </div>
+
+                <div class="col-md-12" id="search-results">
+                    {{#with getSearchResults }}
+                        {{#each getSearchResults }}
+                            <div class="row seperator">
+                                <div class="col-md-4">
+                                    <img src="{{ image }}" class="img-responsive"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>{{ title }}</h4>
+                                    <p>{{ description }}</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-primary addToPlaylist" yt-title="{{ title }}" yt-image="{{ image }}" yt-video="{{ videoId }}">Add to playlist</button>
+                                </div>
+                            </div>
+                        {{/each}}
+                    {{else}}
+                        <br/>
+                        No search results...
+                    {{/with}}
+                </div>
+            </div>
+            <div class="col-md-4">
+                {{> playlist }}
+                <hr>
+
+                <div class="users">
+                    <h3>Users</h3>
+                    {{#each getUsers}}
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="img-circle img-responsive" src="http://www.iconsfind.com/wp-content/uploads/2015/10/20151012_561baed03a54e.png"/>
+                            </div>
+                            <div class="col-md-5">
+                                {{#if currentUser user }}
+                                    <strong>
+                                        {{ user }}
+                                    </strong>
+                                {{else}}
+                                    {{ user }}
+                                {{/if}}
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

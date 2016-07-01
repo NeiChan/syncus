@@ -1,0 +1,22 @@
+/* CSS declarations go here */
+h3 { margin: 0; }
+
+#search-results .seperator {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid #e3e3e3;
+}
+
+
+#playlist {
+    height: 400px;
+    overflow-y: scroll;
+}
+#playlist .seperator {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.hide { display: none; }

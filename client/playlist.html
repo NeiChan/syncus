@@ -1,0 +1,21 @@
+<template name="playlist">
+    <h3>Playlist ({{ totalVideos }})</h3>
+
+    <br/>
+
+    <div id="playlist">
+        {{#each getPlaylist }}
+            <div class="row seperator">
+                <div class="col-md-4">
+                    <img class="media-object img-responsive" src="{{ image }}"/>
+                </div>
+                <div class="col-md-6">
+                    <p>{{ title }}</p>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-danger removeFromPlaylist" yt-video="{{ videoId }}">X</button>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</template>
