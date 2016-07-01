@@ -29,7 +29,9 @@ Template.Home.events({
                 Meteor.call('room_users.insert', id, username, 1, (error, result) => {
                 });
 
-                window.location.href = base_url + '/room/'+id+'';
+                Router.go('/room/'+id+'');
+                
+                //window.location.href = base_url + '/room/'+id+'';
             }
 
             if(error){
